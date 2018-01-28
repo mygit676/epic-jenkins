@@ -1,0 +1,16 @@
+---
+
+- name: replacing the config.xml on remote server
+  template:
+    src: "ldap-authentication.xml.j2"
+    dest: "{{jenkins_home}}/config.xml"
+    owner: jenkins
+    group: jenkins
+    mode: 0644
+  
+  notify:
+    - restart jenkins
+    
+    
+  
+
